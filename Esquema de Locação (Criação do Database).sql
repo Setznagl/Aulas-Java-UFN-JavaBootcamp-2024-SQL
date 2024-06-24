@@ -1,4 +1,4 @@
-// Refazer tabelas rapidamente
+-- Refazer tabelas rapidamente
 drop table ator,categoria,endereco,genero,profissao,filme_ator,filme,
 	locacao_filme,locacao,cliente,dependente,cli_endereco;
 
@@ -81,7 +81,7 @@ create table dependente
 (
 	COD_CLI integer not null,
 	foreign key (COD_CLI) REFERENCES cliente(COD_CLI),
-	COD_DEP integer not nullm
+	COD_DEP integer not null,
 	foreign key (COD_DEP) REFERENCES cliente(COD_CLI),
 	PARENTESCO varchar(20)
 );
