@@ -13,7 +13,7 @@
 <p>
 Ele serve como um portfólio digital que demonstra o progresso e as habilidades adquiridas ao longo dos três meses de curso sendo uma prova do meu engajamento e motivação durante o projeto.
 
-A equipe avaliadora é muito bem vinda para revisar o código e avaliar o entendimento dos conceitos de programação em Java. 
+A equipe avaliadora é muito bem vinda para revisar o código e avaliar o entendimento dos conceitos de SQL com PostgresSQL.
 </p>
 
 <p>
