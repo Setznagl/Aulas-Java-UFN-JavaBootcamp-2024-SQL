@@ -14,3 +14,7 @@ from cliente C
 join dependente DEP on C.COD_CLI = DEP.COD_CLI
 join cliente D on DEP.COD_DEP = D.COD_CLI;
 
+// Exercicios três
+
+
+
