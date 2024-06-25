@@ -66,5 +66,23 @@ where C.NOME = 'Deonizio Martins';
 /* Exercício 08
 Listar todos os filmes e seus respectivos gêneros e categorias.*/
 
-select F.COD_FILME as id_filme , F.TITULO as Titulo
+select F.COD_FILME as id_filme , F.TITULO as Titulo,
+	G.NOME as Genero, C.NOME as Categoria
+from filme F
+join genero G on F.COD_GEN = G.COD_GEN
+join categoria C on F.COD_CAT = C.COD_CAT
+
+/* Exercício 09 
+Mostrar todos os clientes que alugaram um filme específico e a data de 
+locação.*/
+	
+select C.COD_CLI as id_cliente, C.NOME, L.DATA_lOC, F.TITULO
+from cliente C
+join locacao L on C.COD_CLI = L.COD_CLI
+join locacao_filme LF on LF.COD_LOC = L.COD_LOC
+join filme F on LF.COD_FILME = F.COD_FILME
+where F.TITULO = 'O Show de Truman';
+
+/* Exercício 09 */
+
 
