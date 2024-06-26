@@ -111,7 +111,6 @@ group by C.COD_CLI , C.NOME
 	HAVING COUNT(L.COD_LOC) * SUM(L.MULTA) > 20
 order by C.NOME;
 
-
 /* Exercício 11 
  Listar todas as locações feitas em um período específico.*/
 
@@ -134,7 +133,12 @@ join locacao L on C.COD_CLI = L.COD_CLI
 group by C.COD_CLI , C.NOME , C.CPF
 order by C.NOME;
 
-/* Exercício 13 */
+/* Exercício 13
+ Listar os clientes e os filmes que eles alugaram, ordenados por data de 
+locação.*/
+
+
+
 
 
 /* Exercício 14 */
