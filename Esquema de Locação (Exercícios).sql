@@ -96,8 +96,14 @@ where L.MULTA > 8;
 /* Exercício 11 
  Listar todas as locações feitas em um período específico.*/
 
+select L.COD_LOC as id_locacao , L.DATA_LOC , LF.DATA_DEVOL, LF.VALOR
+from locacao L 
+join locacao_filme LF on L.COD_LOC = LF.COD_LOC
+where L.DATA_LOC between '2024-04-26' and '2024-05-08';
 
-/* Exercício 12 */
+
+/* Exercício 12
+Obter a quantidade total de filmes alugados por cada cliente.*/
 
 
 /* Exercício 13 */
