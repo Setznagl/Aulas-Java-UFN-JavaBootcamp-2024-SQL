@@ -83,6 +83,31 @@ join locacao_filme LF on LF.COD_LOC = L.COD_LOC
 join filme F on LF.COD_FILME = F.COD_FILME
 where F.TITULO = 'O Show de Truman';
 
-/* Exercício 09 */
+/* Exercício 10 
+Exibir a lista de clientes com multas superiores a um valor específico.*/
 
+select C.COD_CLI as id_cliente , C.NOME , L.DATA_LOC , L.DESCONTO ,
+	L.MULTA , L.SUB_TOTAL
+from cliente C
+join locacao L on C.COD_CLI = L.COD_CLI
+where L.MULTA > 8;
+
+
+/* Exercício 11 
+ Listar todas as locações feitas em um período específico.*/
+
+
+/* Exercício 12 */
+
+
+/* Exercício 13 */
+
+
+/* Exercício 14 */
+
+
+/* Exercício 15 */
+
+
+/* Exercício 16 */
 
