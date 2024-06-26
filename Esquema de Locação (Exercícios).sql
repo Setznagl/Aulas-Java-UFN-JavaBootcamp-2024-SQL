@@ -86,11 +86,30 @@ where F.TITULO = 'O Show de Truman';
 /* Exercício 10 
 Exibir a lista de clientes com multas superiores a um valor específico.*/
 
-select C.COD_CLI as id_cliente , C.NOME , L.DATA_LOC , L.DESCONTO ,
-	L.MULTA , L.SUB_TOTAL
+select 
+	C.COD_CLI as id_cliente,
+	C.NOME,
+	L.DATA_LOC,
+	L.DESCONTO,
+	L.MULTA, 
+	L.SUB_TOTAL
 from cliente C
 join locacao L on C.COD_CLI = L.COD_CLI
 where L.MULTA > 8;
+-- Solução mais robusta
+select 
+	C.COD_CLI as id_cliente,
+	C.NOME,
+	count(L.COD_LOC) as total_locacoes,
+	count(L.COD_LOC) * sum(L.MULTA) as Multas,
+	count(L.COD_LOC) * sum(L.SUB_TOTAL) as Subtotal
+from cliente C
+join locacao L on C.COD_CLI = L.COD_CLI
+join locacao_filme LF on L.COD_LOC = LF.COD_LOC
+group by C.COD_CLI , C.NOME
+	-- having é o where para aggregations
+	HAVING COUNT(L.COD_LOC) * SUM(L.MULTA) > 20
+order by C.NOME;
 
 
 /* Exercício 11 
@@ -105,6 +124,15 @@ where L.DATA_LOC between '2024-04-26' and '2024-05-08';
 /* Exercício 12
 Obter a quantidade total de filmes alugados por cada cliente.*/
 
+select 
+	C.COD_CLI as id_cliente,
+	C.NOME,
+	C.CPF,
+	count(L.COD_LOC) as qtd_Alugados
+from cliente C
+join locacao L on C.COD_CLI = L.COD_CLI
+group by C.COD_CLI , C.NOME , C.CPF
+order by C.NOME;
 
 /* Exercício 13 */
 
